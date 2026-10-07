@@ -1,0 +1,17 @@
+/target/
+/app/target/
+/dist/
+/packages/
+/tmp/
+/evidence/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Internal planning and delivery paperwork remain local.
+/SPEC.md
+/docs/BRAND.md
+/docs/NEEDS_300.md
+/docs/UI_COVERAGE.md
+/tools/make*delivery*.py
+/tools/make_github_package.py

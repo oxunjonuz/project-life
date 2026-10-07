@@ -1,0 +1,30 @@
+[package]
+name = "projectlife"
+version = "0.9.5"
+edition = "2021"
+description = "Project Life — a local flight recorder for project file history. Made for the moment an agent deletes or breaks something: it keeps everything."
+authors = ["Oxunjon Ubaydllayev <oxunjonub@gmail.com>"]
+license = "MIT"
+
+[lib]
+name = "projectlife"
+path = "src/lib.rs"
+
+[[bin]]
+name = "projectlife"
+path = "src/main.rs"
+
+# The agent-facing MCP server is a separate process: read-only, and separately auditable.
+[[bin]]
+name = "pl-mcp"
+path = "src/bin/pl_mcp.rs"
+
+[dependencies]
+sha2 = "0.10"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+libc = "0.2"
+
+[profile.release]
+opt-level = 2
+panic = "abort"

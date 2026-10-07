@@ -1,0 +1,19 @@
+[Desktop Entry]
+# Filled by app/linux/build_linux_app.sh through tools/fill_template.py --brand: the name, the
+# sentence about what the program is for and the author's address come from src/brand.rs. The
+# X-ProjectLife-* keys are vendor keys, which the desktop-entry specification allows, so the
+# attribution is readable in the entry itself and not only in the program.
+Type=Application
+Name=@PRODUCT@
+GenericName=File history
+Comment=File history for your projects, kept on your own disk
+Exec=projectlife-app %U
+Icon=project-life
+Terminal=false
+Categories=Utility;FileTools;
+Keywords=backup;history;version;files;
+StartupWMClass=projectlife-app
+X-ProjectLife-What-It-Is=@WHAT_IT_IS@
+X-ProjectLife-Author=@AUTHOR@
+X-ProjectLife-Author-Email=@AUTHOR_EMAIL@
+X-ProjectLife-Licence=@LICENCE@

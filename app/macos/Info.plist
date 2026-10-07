@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  A template, not the shipped file: `app/macos/build_app.sh` fills it through
+  `tools/fill_template.py` with its brand option, taking VERSION from the delivery's VERSION file and
+  the product, author, address, copyright, licence and the sentence about purpose from
+  `tools/brand.py`, which reads src/brand.rs. Round 302: before this, the version here was typed by
+  hand and had already drifted one release behind the VERSION file (0.9.3 against 0.9.4). A
+  placeholder left unfilled fails the build rather than shipping. (This comment may not contain a
+  doubled hyphen: XML forbids it inside comments, and the first version of this text did, so the
+  plist could not be parsed at all.)
+-->
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>@PRODUCT@</string>
+    <key>CFBundleDisplayName</key>
+    <string>@PRODUCT@</string>
+    <key>CFBundleExecutable</key>
+    <string>ProjectLife</string>
+    <key>CFBundleIdentifier</key>
+    <string>local.projectlife.app</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>@VERSION@</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleIconFile</key>
+    <string>ProjectLife.icns</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>11.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <!-- What Finder's Info window shows. The address is written without angle brackets on purpose:
+         this is XML, and a `<` inside a value would have to be escaped. -->
+    <key>CFBundleGetInfoString</key>
+    <string>@PRODUCT@ @VERSION@ — @WHAT_IT_IS@ Author: @AUTHOR@ (@AUTHOR_EMAIL@). @LICENCE@ licence.</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>@COPYRIGHT@. @LICENCE@ licence. Ad-hoc signed; no Apple certificate.</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.utilities</string>
+    <!-- The interface server listens on 127.0.0.1 only; this exception is what lets the window load
+         it over plain HTTP without weakening anything else. -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsLocalNetworking</key>
+        <true/>
+    </dict>
+</dict>
+</plist>

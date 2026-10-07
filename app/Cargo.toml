@@ -1,0 +1,19 @@
+[package]
+name = "projectlife-app"
+version = "0.9.5"
+edition = "2021"
+description = "Project Life desktop shell: a local UI over the existing projectlife core"
+authors = ["Oxunjon Ubaydllayev <oxunjonub@gmail.com>"]
+license = "MIT"
+
+[[bin]]
+name = "projectlife-ui"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = "1"
+sha2 = "0.10"
+libc = "0.2"
+
+[profile.release]
+opt-level = 2
