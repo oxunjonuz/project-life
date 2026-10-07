@@ -1,5 +1,5 @@
-/target/
-/app/target/
+/target
+/app/target
 /dist/
 /packages/
 /tmp/
@@ -15,3 +15,4 @@ __pycache__/
 /docs/UI_COVERAGE.md
 /tools/make*delivery*.py
 /tools/make_github_package.py
+/tools/bind_deny
